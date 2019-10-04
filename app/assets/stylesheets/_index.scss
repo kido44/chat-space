@@ -31,6 +31,23 @@ ol, ul {
   list-style: none;
 }
 
+side a {
+  color: white;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-edit:before, .fa-pencil-square-o:before {
+  content: "\f044";
+}
+
 .chat-side .groups {
   height: calc(100vh - 100px);
   background-color: #2f3e51;
