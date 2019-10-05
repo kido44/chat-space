@@ -1,56 +1,8 @@
-.chat-side {
-  width: 300px;
-  color: white;
-  float: left;
+*{
+  box-sizing:border-box;
 }
 
-.chat-side .side-header {
-  background-color: #253141;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.chat-side .side-header__box {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-weight: bold;
-}
-
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
-  margin: 0;
-  padding: 0;
-}
-
-.chat-side .side-header__box__menu {
-  display: flex;
-}
-ol, ul {
-  list-style: none;
-}
-
-side a {
-  color: white;
-}
-
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.fa-edit:before, .fa-pencil-square-o:before {
-  content: "\f044";
-}
-
-.chat-side .groups {
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-  padding: 20px 20px 0;
-  overflow: scroll;
+html{
+  columns: #000000;
+  background: #ffffff;
 }

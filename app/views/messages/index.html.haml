@@ -11,3 +11,25 @@
     .flash-box
       .notice ログインしました。
     .wrapper
+      .chat-side
+        .side-header
+          .side-header__box
+            %p.side-header__user-name Kido
+            %ul.side-header__box__menu
+              %li.side-header__box__menu__new-group
+                %a{:href => "/groups/new"}
+                  %i.fa.fa-edit
+              %li.side-header__box__menu__edit-user
+                %a{:href => "/users/sample/edit"}
+                  %i.fa.fa-cog
+      .groups
+        %a{:href => "/groups/sample/messages"}
+          .group
+            %p.group__group-name %グループネーム
+            %p.group__latest-messages %sample
+          .group
+            %p.group__group-name %グループネーム
+            %p.group__latest-messages %sample
+          .group
+            %p.group__group-name %グループネーム
+            %p.group__latest-messages %sample
