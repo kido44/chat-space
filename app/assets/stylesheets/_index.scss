@@ -41,10 +41,13 @@ html{
       .side-header__box__menu {
         display: flex;
         color:white;
+        li {
+          margin-left: 0.3rem;
+        }
+      }
     }
-    }
-    .side-header__box__menu li {
-      margin-left: 0.3rem;
+    .chat-side a{
+      color:white;
     }
     
   }
