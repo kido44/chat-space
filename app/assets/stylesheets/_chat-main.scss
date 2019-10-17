@@ -18,9 +18,9 @@
     margin-top: 35px;
 　}
   .main-header__left-box__current-group {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
   }
   .main-header__left-box__member-list {
     display: flex;
@@ -41,5 +41,10 @@
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
+}
+.form{
+  height:90px;
+  padding:20px 40px;
+  background-color:#ddd;
 }
 }
