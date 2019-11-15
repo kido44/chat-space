@@ -24,8 +24,9 @@ $(function () {
         return html;
     }
     function scroll_view() {
-        $('.messages').animate({ scrollTop: $(".messages")[0].scrollHeight }, 1500);
+        $('.messages').animate({ scrollTop: $(".messages")[0].scrollHeight }, 500);
     }
+    
 
 
     $('#new_message').on('submit', function (e) {
@@ -49,8 +50,11 @@ $(function () {
             $('.form__textfield').val('');
             $('.form__submit').prop('disabled', false);
         })
-        .fail(function () {
-            alert('error');
-        });
+        .fail(function() {
+            alert('メッセージ送信に失敗しました');
+          });
+        } else {
+            clearInterval(interval);
+          }
+      } , 5000 );
     })
-});
