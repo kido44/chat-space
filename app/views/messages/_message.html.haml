@@ -1,11 +1,11 @@
-.message
-  .upper-message
-    .upper-message__user-name
+%li.timeline__bodyList{data: {id: message.id}}
+  .timeline__bodyInfoWrap
+    .timeline__bodyName
       = message.user.name
-    .upper-message__date
+    .timeline__bodyDate
       = message.created_at.strftime("%Y/%m/%d %H:%M")
-  .lower-message
-    - if message.content.present?
-      %p.lower-message__content
-        = message.content
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+  - if message.content.present?
+    .timeline__bodyMessage
+      = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
