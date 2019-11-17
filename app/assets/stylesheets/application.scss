@@ -1,12 +1,202 @@
+@import "./reset";
 @import "font-awesome";
-@import "config/colors";
 @import "config/size";
-@import "config/reset";
-@import "mixins/mixin";
-@import "mixins/vendor_prefix";
-@import "modules/chat";
-@import "modules/flash";
-@import "modules/side_bar";
 @import "modules/user";
+@import "config/colors";
+@import "modules/flash";
 @import "modules/group";
-@import "messages/messages.scss"
+@import "modules/chat";
+@import "modules/side_bar";
+
+//全体指定
+
+body {
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+// layout
+
+.layout {
+  display: flex;
+  &__dashboard {
+    width: 300px;
+  }
+  &__timeline {
+    width: calc(100vw - 300px);
+  }
+  &::after {
+    content: "";
+  clear: both;
+  display: block;
+  }
+}
+
+// message
+.message-box {
+  background-color: #38AEF0;
+  text-align: center;
+  color: #fff;
+  padding: 4px 0;
+  display: none;
+}
+
+// dashboard
+
+.dashboard {
+  background-color: #2f3e51;
+  &__header {
+    background-color: #253141;
+    height: 100px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__name {
+    font-weight: bold;
+  }
+  &__iconWrap {
+    font-size: 0;
+    li {
+      display: inline-block;
+      font-size: 16px;
+      margin-left: 6px;
+    }
+    i {
+      color: #fff;
+    }
+  }
+  &__body {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0;
+    overflow: scroll;
+  }
+  &__group {
+    margin-bottom: 40px;
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+  &__groupNewComment {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+}
+
+// timeline
+.timeline {
+    &__header {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      padding: 28px 40px 0;
+    }
+    &__groupWrap {
+      margin-top: 7px;
+    }
+    &__groupName {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    &__membersName {
+      font-size: 12px;
+      color: #999999;
+      display: flex;
+    }
+    &__editBtn {
+      height: 40px;
+      color: #38aef0;
+      line-height: 40px;
+      padding: 0 20px;
+      border: solid 1px #38aef0;
+      display: inline-block;
+      text-decoration: none;
+    }
+    &__body {
+      height: calc(100vh - 190px);
+      background-color: #fafafa;
+      padding: 46px 40px 0;
+      overflow: scroll-y;
+      &InfoWrap {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      &List {
+        margin-bottom: 50px;
+      }
+      &Name {
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &Date {
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+      &Message {
+        color: #434a54;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+    &__footer {
+      height: 90px;
+      padding: 20px 40px;
+      background-color: #dcdcdc;
+    }
+}
+
+
+// form
+.form {
+  form {
+    display: flex;
+  }
+  &__message {
+    height: 50px;
+    width: 100%;
+    padding: 0 10px;
+    color: #434a54;
+    border-style: none;
+    font-size: 16px;
+    position: relative;
+  }
+  &__submit {
+    margin-left: 15px;
+    height: 50px;
+    padding: 0 30px;
+    background-color: #38aef0;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  &__mask {
+    position: relative;
+  }
+  &__mask__image {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    .hidden {
+      display: none;
+    }
+  }
+}
