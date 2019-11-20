@@ -69,7 +69,7 @@ $(function(){
   //     console.log('error');
   //   });
   // };
-  // setInterval(reloadMessages, 5000);
+  // setInterval(reloadMessages, ７000);
 
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
