@@ -45,31 +45,31 @@ $(function(){
   })
 
   //自動更新
-  // function reloadMessages(){
-  //   var last_message_id = $('.timeline__bodyList').last().data('id');
-  //   var href = 'api/messages'
-  //   $.ajax({
-  //   url: href,
-  //   type: 'GET',
-  //   data:{id: last_message_id},
-  //   dataType: 'json'
-  //   })
+   function reloadMessages(){
+     var last_message_id = $('.timeline__bodyList').last().data('id');
+     var href = 'api/messages'
+     $.ajax({
+     url: href,
+     type: 'GET',
+     data:{id: last_message_id},
+     dataType: 'json'
+     })
 
-  //   .done(function(messages){
-  //     console.log(messages);
-  //     messages.forEach(function(message){
-  //       var insertHTML = buildHTML(message)
-  //       $('#message').append(insertHTML)
-  //     });
+     .done(function(messages){
+       console.log(messages);
+       messages.forEach(function(message){
+         var insertHTML = buildHTML(message)
+         $('#message').append(insertHTML)
+       });
 
-  //     $('.timeline__body').animate({scrollTop: $('.timeline__body')[0].scrollHeight}, 'fast');
-  //   })
+       $('.timeline__body').animate({scrollTop: $('.timeline__body')[0].scrollHeight}, 'fast');
+      })
 
-  //   .fail(function(){
-  //     console.log('error');
-  //   });
-  // };
-  // setInterval(reloadMessages, ７000);
+     .fail(function(){
+       console.log('error');
+      });
+    };
+   setInterval(reloadMessages, 7000);
 
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
