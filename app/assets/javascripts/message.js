@@ -4,17 +4,17 @@ $(function(){
     var image_url = (comment.image)? `<image class="lower-message_image" src="${comment.image}">`:"";
     var html = `<li class="timeline__bodyList" data-id="${comment.id}">
                   <div class="timeline__bodyInfoWrap">
-                  <div class="timeline__bodyName">
-                  ${comment.user_name}
+                    <div class="timeline__bodyName">
+                      ${comment.user_name}
+                    </div>
+                    <div class="timeline__bodyDate">
+                      ${comment.created_at}
+                    </div>
                   </div>
-                  <div class="timeline__bodyDate">
-                  ${comment.created_at}
-                  </div>
-                  </div>
-                  <div class="timeline__bodyMessage">
-                  ${comment.content}
-                  </div>
-                  ${image_url}
+                    <div class="timeline__bodyMessage">
+                      ${comment.content}
+                    </div>
+                      ${image_url}
                 </li>`
     return html;
   }
@@ -56,7 +56,6 @@ $(function(){
      })
 
      .done(function(messages){
-       console.log(messages);
        messages.forEach(function(message){
          var insertHTML = buildHTML(message)
          $('#message').append(insertHTML)
@@ -66,7 +65,7 @@ $(function(){
       })
 
      .fail(function(){
-       console.log('error');
+       ('error');
       });
     };
    setInterval(reloadMessages, 7000);
