@@ -65,7 +65,7 @@ $(function(){
       })
 
      .fail(function(){
-       ('error');
+       alert('error');
       });
     };
    setInterval(reloadMessages, 7000);
