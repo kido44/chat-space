@@ -45,7 +45,8 @@ $(function(){
   })
 
   //自動更新
-   function reloadMessages(){
+   var reloadMessages = function(){
+    if (location.href.match(/\/groups\/\d+\/messages/)){
      var last_message_id = $('.timeline__bodyList').last().data('id');
      var href = 'api/messages'
      $.ajax({
@@ -68,31 +69,8 @@ $(function(){
        alert('error');
       });
     };
-   setInterval(reloadMessages, 7000);
+  }
+   setInterval(reloadMessages, 5000);
 
-  var interval = setInterval(function() {
-    if (location.href.match(/\/groups\/\d+\/messages/)){
-      $('.timeline__body').animate({scrollTop: $('.timeline__body')[0].scrollHeight}, 'fast');
-      var last_message_id = $('.timeline__bodyList').last().data('id');
-      var href = 'api/messages'
-      $.ajax({
-        url: href,
-        type: "GET",
-        data: {id: last_message_id},
-        dataType: "json"
-      })
-      .done(function(messages) {
-        messages.forEach(function(message) {
-          var insertHTML = buildHTML(message)
-          $('#message').append(insertHTML)
-          $('.timeline__body').animate({scrollTop: $('.timeline__body')[0].scrollHeight}, 'fast');
-        })
-      })
-      .fail(function() {
-        alert('自動更新に失敗しました');
-      });
-    } else {
-        clearInterval(interval);
-      }
-  } , 5000 );
+
 })
