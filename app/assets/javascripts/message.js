@@ -1,7 +1,7 @@
 $(function(){
   // HTML作成
   function buildHTML(comment){
-    var image_url = (comment.image)? `<image class="lower-message_image" src="${comment.image}">`:"";
+    var image = comment.image? `<image class="lower-message_image" src="${comment.image}">`:"";
     var html = `<li class="timeline__bodyList" data-id="${comment.id}">
                   <div class="timeline__bodyInfoWrap">
                     <div class="timeline__bodyName">
@@ -14,7 +14,7 @@ $(function(){
                     <div class="timeline__bodyMessage">
                       ${comment.content}
                     </div>
-                      ${image_url}
+                      ${image}
                 </li>`
     return html;
   }
@@ -68,9 +68,12 @@ $(function(){
      .fail(function(){
        alert('error');
       });
+      return false;
     };
   }
    setInterval(reloadMessages, 5000);
 
 
 })
+
+
